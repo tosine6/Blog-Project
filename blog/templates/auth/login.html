@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="css/blog.css">
+<style>
+.form1{
+    border: 2px solid grey;
+    width: 500px;
+    padding: 20px;
+    border-radius: 8px;
+}
+.par{
+    background-color: #C25100;
+    color:white;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 4px;
+}
+
+</style>
+<div class="container form1">
+<form method="POST">
+    {% csrf_token %}
+    <p class="par"><b>Olooti Login</b></p>
+    <hr>
+    <div>
+        <label for="username"><b>Username</b></label>
+        <input name="username" class="form-control" id="username" type="text" placeholder="Username" required></input>
+    </div><br>
+    <div>
+        <label for="password"><b>Password</b></label>
+        <input name="password" class="form-control" id="password" type="password" placeholder="password" required></input>
+    </div><br>
+    <input type="submit" value="Login" class="btn" style="background-color:#C25100">
+</form>
+</div>
+{% endblock %}

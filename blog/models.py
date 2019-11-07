@@ -16,4 +16,15 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+class Comment(models.Model):
+    post_comment = models.TextField()
+    comment_date = models.DateField(default = timezone.now)
+
+    def private(self):
+        self.comment_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.post_comment
+
 
